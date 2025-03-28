@@ -14,7 +14,7 @@ export class SurveyController {
             const survey = await this.surveyService.saveSurvey(surveyData);
             res.status(200).json(survey);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.status(500).json({ message: error });
         }
     }
 
@@ -24,7 +24,7 @@ export class SurveyController {
             const survey = await this.surveyService.checkSurveyOpen(profileId, userId);
             res.status(200).json(survey);
         } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.status(500).json({ message: error });
         }
     }
 }
